@@ -24,6 +24,7 @@ export default function Layout() {
           <NavLink to="/categorias">Categorias</NavLink>
           <NavLink to="/contas">Contas</NavLink>
           <NavLink to="/cartoes">Cartões</NavLink>
+          <NavLink to="/perfil">Perfil</NavLink>
         </nav>
         <span className="usuario">
           {user?.email}

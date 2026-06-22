@@ -179,6 +179,16 @@ create table if not exists public.telegram_codigos (
 );
 create index if not exists telegram_codigos_codigo_ix on public.telegram_codigos (codigo);
 
+-- ─────────────────────── telegram_conversas ───────────────────────
+-- Historico curto de conversa por chat (continuidade do fluxo de confirmacao).
+-- Sem user_id: so o backend (service key) acessa; RLS sem policy bloqueia o resto.
+create table if not exists public.telegram_conversas (
+  chat_id       bigint primary key,
+  historico     jsonb not null default '[]'::jsonb,
+  atualizado_em timestamptz not null default now()
+);
+alter table public.telegram_conversas enable row level security;
+
 -- ═══════════════════════════════ RLS ═══════════════════════════════
 -- Policies por dono. profiles usa id; demais usam user_id.
 

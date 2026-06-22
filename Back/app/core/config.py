@@ -33,6 +33,7 @@ class Settings(BaseSettings):
     # ── Telegram ──
     telegram_bot_token: str | None = None
     telegram_webhook_secret: str | None = None
+    telegram_bot_username: str | None = None
 
     # ── Infra ──
     railway_token: str | None = Field(

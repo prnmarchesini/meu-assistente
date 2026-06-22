@@ -12,6 +12,7 @@ import Documentos from './pages/Documentos'
 import Faturas from './pages/Faturas'
 import Login from './pages/Login'
 import NovaDespesa from './pages/NovaDespesa'
+import Perfil from './pages/Perfil'
 import Upload from './pages/Upload'
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/categorias" element={<Categorias />} />
         <Route path="/contas" element={<Contas />} />
         <Route path="/cartoes" element={<Cartoes />} />
+        <Route path="/perfil" element={<Perfil />} />
       </Route>
     </Routes>
   )
