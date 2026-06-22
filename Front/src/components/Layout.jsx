@@ -18,6 +18,8 @@ export default function Layout() {
           <NavLink to="/">Dashboard</NavLink>
           <NavLink to="/despesas/nova">Lançar</NavLink>
           <NavLink to="/faturas">Faturas</NavLink>
+          <NavLink to="/upload">Enviar nota</NavLink>
+          <NavLink to="/documentos">Documentos</NavLink>
           <NavLink to="/categorias">Categorias</NavLink>
           <NavLink to="/contas">Contas</NavLink>
           <NavLink to="/cartoes">Cartões</NavLink>

@@ -7,9 +7,11 @@ import Categorias from './pages/Categorias'
 import Contas from './pages/Contas'
 import Dashboard from './pages/Dashboard'
 import EsqueciSenha from './pages/EsqueciSenha'
+import Documentos from './pages/Documentos'
 import Faturas from './pages/Faturas'
 import Login from './pages/Login'
 import NovaDespesa from './pages/NovaDespesa'
+import Upload from './pages/Upload'
 
 export default function App() {
   return (
@@ -27,6 +29,8 @@ export default function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/despesas/nova" element={<NovaDespesa />} />
         <Route path="/faturas" element={<Faturas />} />
+        <Route path="/documentos" element={<Documentos />} />
+        <Route path="/upload" element={<Upload />} />
         <Route path="/categorias" element={<Categorias />} />
         <Route path="/contas" element={<Contas />} />
         <Route path="/cartoes" element={<Cartoes />} />
