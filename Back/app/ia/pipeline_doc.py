@@ -9,7 +9,7 @@ import uuid
 
 import fitz  # PyMuPDF
 
-from ..core.supabase import get_supabase
+from ..core import storage
 from ..servicos import documentos as svc_doc
 from .openai_client import estruturar_imagem, estruturar_texto, gerar_embedding
 
@@ -54,12 +54,8 @@ def analisar_conteudo(conteudo: bytes, filename: str, content_type: str) -> dict
 
 
 def _subir_storage(user_id, bucket, conteudo, filename, content_type) -> str:
-    sb = get_supabase()
     path = f"{user_id}/{uuid.uuid4()}/{filename}"
-    sb.storage.from_(bucket).upload(
-        path, conteudo, {"content-type": content_type or "application/octet-stream"}
-    )
-    return path
+    return storage.upload(bucket, path, conteudo, content_type or "application/octet-stream")
 
 
 def processar_documento(cur, user_id, conteudo: bytes, filename: str, content_type: str) -> dict:
