@@ -41,6 +41,17 @@ class Settings(BaseSettings):
     )
     port: int = 8000
 
+    # ── Producao ──
+    # Origens permitidas no CORS, separadas por virgula. Vazio = "*" (apenas dev).
+    cors_origins: str | None = None
+    ambiente: str = "dev"  # "dev" | "producao"
+
+    @property
+    def lista_cors(self) -> list[str]:
+        if self.cors_origins:
+            return [o.strip() for o in self.cors_origins.split(",") if o.strip()]
+        return ["*"]
+
     @property
     def database_url(self) -> str | None:
         """URL de conexao do backend.

@@ -2,6 +2,7 @@
 from fastapi import APIRouter, Depends, Header, HTTPException, Request
 
 from ..core.config import get_settings
+from ..core.ratelimit import permitir
 from ..servicos import telegram_vinculo as tv
 from ..telegram.webhook import handle_update
 from .auth import get_current_user_id
@@ -20,6 +21,10 @@ async def telegram_webhook(
     # Hardening (Passo 7): rejeita qualquer chamada sem o secret correto.
     if not s.telegram_webhook_secret or x_telegram_bot_api_secret_token != s.telegram_webhook_secret:
         raise HTTPException(status_code=403, detail="secret invalido")
+    # Rate limit por IP de origem (defesa contra flood).
+    ip = request.client.host if request.client else "desconhecido"
+    if not permitir(f"webhook:{ip}", limite=60, janela_s=60):
+        raise HTTPException(status_code=429, detail="muitas requisicoes")
     update = await request.json()
     try:
         handle_update(cur, update)
