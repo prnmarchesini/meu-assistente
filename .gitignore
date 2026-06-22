@@ -3,6 +3,9 @@ chaves.txt
 *.env
 .env
 .env.*
+# ...mas permite versionar os modelos de exemplo (sem segredos):
+!.env.example
+!*.env.example
 
 # Dependências
 node_modules/
