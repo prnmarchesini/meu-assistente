@@ -16,6 +16,7 @@ export default function Layout() {
         <strong>Controle de Gastos</strong>
         <nav>
           <NavLink to="/">Dashboard</NavLink>
+          <NavLink to="/chat">Assistente</NavLink>
           <NavLink to="/despesas/nova">Lançar</NavLink>
           <NavLink to="/faturas">Faturas</NavLink>
           <NavLink to="/upload">Enviar nota</NavLink>

@@ -66,3 +66,8 @@ label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color:
 .erro { color: #b91c1c; background: #fee2e2; padding: 8px 12px; border-radius: 6px; font-size: 14px; }
 .ok { color: #065f46; background: #d1fae5; padding: 8px 12px; border-radius: 6px; font-size: 14px; }
 .aviso { background: #fef3c7; padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; }
+
+.chat { display: flex; flex-direction: column; gap: 10px; background: #fff; border: 1px solid var(--borda); border-radius: 10px; padding: 16px; min-height: 320px; max-height: 60vh; overflow-y: auto; margin-bottom: 12px; }
+.bolha { padding: 10px 14px; border-radius: 12px; max-width: 75%; white-space: pre-wrap; font-size: 14px; }
+.bolha.user { align-self: flex-end; background: var(--azul); color: #fff; border-bottom-right-radius: 2px; }
+.bolha.assistant { align-self: flex-start; background: var(--cinza); color: var(--texto); border-bottom-left-radius: 2px; }

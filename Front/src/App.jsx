@@ -4,6 +4,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Cadastro from './pages/Cadastro'
 import Cartoes from './pages/Cartoes'
 import Categorias from './pages/Categorias'
+import Chat from './pages/Chat'
 import Contas from './pages/Contas'
 import Dashboard from './pages/Dashboard'
 import EsqueciSenha from './pages/EsqueciSenha'
@@ -27,6 +28,7 @@ export default function App() {
         }
       >
         <Route path="/" element={<Dashboard />} />
+        <Route path="/chat" element={<Chat />} />
         <Route path="/despesas/nova" element={<NovaDespesa />} />
         <Route path="/faturas" element={<Faturas />} />
         <Route path="/documentos" element={<Documentos />} />

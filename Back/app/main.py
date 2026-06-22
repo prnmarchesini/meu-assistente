@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .api.rotas import router as api_router
+from .api.rotas_chat import router as chat_router
 from .api.rotas_documentos import router as documentos_router
 from .core.db import check_connection
 from .servicos.comuns import RegraNegocioError
@@ -36,3 +37,4 @@ def health():
 
 app.include_router(api_router)
 app.include_router(documentos_router)
+app.include_router(chat_router)
