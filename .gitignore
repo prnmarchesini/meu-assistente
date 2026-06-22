@@ -1,0 +1,24 @@
+# Segredos / credenciais
+chaves.txt
+*.env
+.env
+.env.*
+
+# Dependências
+node_modules/
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Build / cache
+dist/
+build/
+.cache/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
